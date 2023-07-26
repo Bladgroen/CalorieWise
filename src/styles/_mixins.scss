@@ -1,0 +1,25 @@
+@import "./variables";
+
+@mixin light-mode {
+  $background: $LightModeBackground;
+  $text: $LightModeText;
+  $accent: $LightModeAccent;
+  $secondAccent: $LightModeSecondAccent;
+  $divider: $LightModeDivider;
+  $error: $LightModeError;
+  $succes: $LightModeSucces;
+  $disabled: $LightModeDisabled;
+  $placeholder: $LightModePlaceholder;
+}
+
+@mixin dark-mode {
+  $background: $DarkModeBackground;
+  $text: $DarkModeText;
+  $accent: $DarkModeAccent;
+  $secondAccent: $DarkModeSecondAccent;
+  $divider: $DarkModeDivider;
+  $error: $DarkModeError;
+  $succes: $DarkModeSucces;
+  $disabled: $DarkModeDisabled;
+  $placeholder: $DarkModePlaceholder;
+}

@@ -1,4 +1,4 @@
-import styles from "./HeaderBar.module.scss";
+import styles from "../styles/HeaderBar.module.scss";
 
 export default function HeaderBar() {
   return (

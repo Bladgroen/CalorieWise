@@ -7,6 +7,7 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import Paper from "@mui/material/Paper";
 import Link from "next/link";
 import * as React from "react";
+import styles from "../styles/NavBar.module.scss";
 
 export default function NavBar() {
   const [value, setValue] = React.useState("recents");
@@ -19,12 +20,14 @@ export default function NavBar() {
     <Paper
       sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
       elevation={3}
+      className={styles.navbar}
     >
       <BottomNavigation
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue);
         }}
+        className={styles.navbar}
       >
         <Link href="/calender">
           <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />

@@ -1,8 +1,11 @@
+"use client";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import React, { useState } from "react";
 import HeaderBar from "../components/HeaderBar";
 import NavBar from "../components/NavBar";
-import "./globals.css";
+import "../styles/globals.scss";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <HeaderBar></HeaderBar>
-        {children}
-        <NavBar></NavBar>
+        <div >
+
+          <HeaderBar></HeaderBar>
+          {children}
+          <NavBar></NavBar>
+        </div>
       </body>
     </html>
   );
