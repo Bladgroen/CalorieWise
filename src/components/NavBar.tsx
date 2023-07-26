@@ -21,7 +21,6 @@ export default function NavBar() {
       elevation={3}
     >
       <BottomNavigation
-        showLabels
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue);
@@ -30,9 +29,12 @@ export default function NavBar() {
         <Link href="/calender">
           <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
         </Link>
-
-        <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-        <BottomNavigationAction label="Archive" icon={<ArchiveIcon />} />
+        <Link href="/home">
+          <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
+        </Link>
+        <Link href="/profile">
+          <BottomNavigationAction label="Archive" icon={<ArchiveIcon />} />
+        </Link>
       </BottomNavigation>
     </Paper>
   );
