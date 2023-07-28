@@ -1,7 +1,7 @@
 "use client";
-import ArchiveIcon from "@mui/icons-material/Archive";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import RestoreIcon from "@mui/icons-material/Restore";
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import HomeIcon from '@mui/icons-material/Home';
+import Person2Icon from '@mui/icons-material/Person2';
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import Paper from "@mui/material/Paper";
@@ -28,7 +28,7 @@ export default function NavBar() {
           <BottomNavigationAction
             label="Calender"
             icon={
-              <RestoreIcon
+              <CalendarMonthIcon
                 className={`${styles.icon} ${
                   activePage === "calender" ? styles.activeIcon : ""
                 }`}
@@ -41,7 +41,7 @@ export default function NavBar() {
           <BottomNavigationAction
             label="Home"
             icon={
-              <FavoriteIcon
+              <HomeIcon
                 className={`${styles.icon} ${
                   activePage === "home" ? styles.activeIcon : ""
                 }`}
@@ -54,7 +54,7 @@ export default function NavBar() {
           <BottomNavigationAction
             label="Profile"
             icon={
-              <ArchiveIcon
+              <Person2Icon
                 className={`${styles.icon} ${
                   activePage === "profile" ? styles.activeIcon : ""
                 }`}
