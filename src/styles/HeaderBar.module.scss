@@ -1,11 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Borel&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 @import "./variables";
 @import "./mixins";
 
 .header {
   background-color: $accent;
+  display: grid;
+  place-content: center;
   .title {
-    font-family: "Borel", cursive;
+    font-family: "Pacifico", cursive;
+    font-size: 2rem;
     color: $text;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
   }
 }
