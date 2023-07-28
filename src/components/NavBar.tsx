@@ -7,13 +7,14 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import Paper from "@mui/material/Paper";
 import Link from "next/link";
 import * as React from "react";
+import { useState } from "react";
 import styles from "../styles/NavBar.module.scss";
 
 export default function NavBar() {
-  const [value, setValue] = React.useState("recents");
+  const [activePage, setActivePage] = useState("home");
 
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    setValue(newValue);
+  const handlePageClick = (label: string) => {
+    setActivePage(label);
   };
 
   return (
@@ -22,21 +23,45 @@ export default function NavBar() {
       elevation={3}
       className={styles.navbar}
     >
-      <BottomNavigation
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
-        className={styles.navbar}
-      >
+      <BottomNavigation className={styles.navbar}>
         <Link href="/calender">
-          <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
+          <BottomNavigationAction
+            label="Calender"
+            icon={
+              <RestoreIcon
+                className={`${styles.icon} ${
+                  activePage === "calender" ? styles.activeIcon : ""
+                }`}
+              />
+            }
+            onClick={() => handlePageClick("calender")}
+          />
         </Link>
-        <Link href="/home">
-          <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
+        <Link href="/">
+          <BottomNavigationAction
+            label="Home"
+            icon={
+              <FavoriteIcon
+                className={`${styles.icon} ${
+                  activePage === "home" ? styles.activeIcon : ""
+                }`}
+              />
+            }
+            onClick={() => handlePageClick("home")}
+          />
         </Link>
         <Link href="/profile">
-          <BottomNavigationAction label="Archive" icon={<ArchiveIcon />} />
+          <BottomNavigationAction
+            label="Profile"
+            icon={
+              <ArchiveIcon
+                className={`${styles.icon} ${
+                  activePage === "profile" ? styles.activeIcon : ""
+                }`}
+              />
+            }
+            onClick={() => handlePageClick("profile")}
+          />
         </Link>
       </BottomNavigation>
     </Paper>

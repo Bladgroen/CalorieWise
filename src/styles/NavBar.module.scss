@@ -1,5 +1,14 @@
 @import "./variables";
 
 .navbar {
-  background-color: $accent;
+  background-color: $background;
+  border-top: 1px solid $divider;
+}
+
+.icon {
+  color: $accent;
+}
+
+.activeIcon {
+  color: blue;
 }
