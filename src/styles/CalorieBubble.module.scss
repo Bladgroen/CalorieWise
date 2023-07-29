@@ -9,10 +9,11 @@
     background-color: #6c63ff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     animation: pulse 2s infinite;
+    flex-direction: column;
 }
 
 .score {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   color: #ffffff;
 }
