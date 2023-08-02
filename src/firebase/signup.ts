@@ -24,12 +24,16 @@ export async function signUp(values: RegisterFormData) {
   return { result, error };
 }
 
-export async function signIn(email: string, password: string) {
+export async function signIn(values: RegisterFormData) {
   let result = null,
     error = null;
 
   try {
-    result = await signInWithEmailAndPassword(auth, email, password);
+    result = await signInWithEmailAndPassword(
+      auth,
+      values.email,
+      values.password
+    );
   } catch (e) {
     error = e;
   }
