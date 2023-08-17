@@ -1,22 +1,18 @@
 "use client";
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import HomeIcon from '@mui/icons-material/Home';
-import Person2Icon from '@mui/icons-material/Person2';
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import HomeIcon from "@mui/icons-material/Home";
+import Person2Icon from "@mui/icons-material/Person2";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import Paper from "@mui/material/Paper";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import * as React from "react";
-import { useState } from "react";
 import styles from "../styles/NavBar.module.scss";
 
 export default function NavBar() {
-  const [activePage, setActivePage] = useState("home");
-
-  const handlePageClick = (label: string) => {
-    setActivePage(label);
-  };
-
+  const currentPage = usePathname();
+  console.log(currentPage);
   return (
     <Paper
       sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
@@ -30,11 +26,10 @@ export default function NavBar() {
             icon={
               <CalendarMonthIcon
                 className={`${styles.icon} ${
-                  activePage === "calender" ? styles.activeIcon : ""
+                  currentPage === "/calender" ? styles.activeIcon : ""
                 }`}
               />
             }
-            onClick={() => handlePageClick("calender")}
           />
         </Link>
         <Link href="/">
@@ -43,11 +38,10 @@ export default function NavBar() {
             icon={
               <HomeIcon
                 className={`${styles.icon} ${
-                  activePage === "home" ? styles.activeIcon : ""
+                  currentPage === "/" ? styles.activeIcon : ""
                 }`}
               />
             }
-            onClick={() => handlePageClick("home")}
           />
         </Link>
         <Link href="/profile">
@@ -56,11 +50,10 @@ export default function NavBar() {
             icon={
               <Person2Icon
                 className={`${styles.icon} ${
-                  activePage === "profile" ? styles.activeIcon : ""
+                  currentPage === "/profile" ? styles.activeIcon : ""
                 }`}
               />
             }
-            onClick={() => handlePageClick("profile")}
           />
         </Link>
       </BottomNavigation>

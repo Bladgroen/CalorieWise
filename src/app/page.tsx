@@ -1,6 +1,7 @@
 "use client";
 import CalorieBubble from "@/components/CalorieBubble";
 import HeaderBar from "../components/HeaderBar";
+import Layout from "../components/LayoutEdit";
 import MealCard from "../components/MealCard/MealCard";
 import NavBar from "../components/NavBar";
 import { logOut } from "../firebase/signup";
@@ -12,14 +13,14 @@ export default function Page() {
   useAuth();
   return (
     <>
-      <HeaderBar></HeaderBar>
-      <button onClick={logOut}></button>
-      <div className={styles.calorieBubble}>
-        <CalorieBubble eatenCalories={eatenCalories} />
-      </div>
-      <MealCard />
-      <MealCard />
-      <NavBar></NavBar>
+      <Layout>
+        <button onClick={logOut}></button>
+        <div className={styles.calorieBubble}>
+          <CalorieBubble eatenCalories={eatenCalories} />
+        </div>
+        <MealCard />
+        <MealCard />
+      </Layout>
     </>
   );
 }

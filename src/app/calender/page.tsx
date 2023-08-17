@@ -1,8 +1,8 @@
-
+import Layout from "../../components/LayoutEdit";
 export default function calender() {
-    return(
-        <div>
-            <p>Calender page</p>
-        </div>
-    )
+  return (
+    <Layout>
+      <p>Calender page</p>
+    </Layout>
+  );
 }
