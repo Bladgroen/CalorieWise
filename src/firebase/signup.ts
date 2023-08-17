@@ -3,6 +3,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   signInWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
 import firebase_app from "./config";
 
@@ -34,6 +35,19 @@ export async function signIn(values: RegisterFormData) {
       values.email,
       values.password
     );
+  } catch (e) {
+    error = e;
+  }
+
+  return { result, error };
+}
+
+export async function logOut() {
+  let result = null,
+    error = null;
+
+  try {
+    result = await signOut(auth);
   } catch (e) {
     error = e;
   }

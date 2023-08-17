@@ -11,9 +11,11 @@ const useAuth = (redirectIfNotLoggedIn = true) => {
       if (user) {
       } else {
         if (redirectIfNotLoggedIn) {
-          router.replace("/");
+          router.replace("/login");
         }
       }
     });
   });
 };
+
+export default useAuth;
