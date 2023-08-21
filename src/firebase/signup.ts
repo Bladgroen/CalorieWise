@@ -5,9 +5,12 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import firebase_app from "./config";
+import initFirebase from "./config";
+import firebase from "firebase/compat/app";
 
-const auth = getAuth(firebase_app);
+initFirebase();
+
+const auth = firebase.auth()
 
 export async function signUp(values: RegisterFormData) {
   let result = null,

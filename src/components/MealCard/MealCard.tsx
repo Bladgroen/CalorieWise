@@ -14,7 +14,7 @@ export default function MealCard() {
   };
 
   return (
-    <>
+    <div className={styles.mealcardContainer}>
       <div className={styles.mealcard_title}>
         <p>Ontbijt</p>
         <p>535</p>
@@ -28,6 +28,6 @@ export default function MealCard() {
           Add food
         </button>
       </div>
-    </>
+    </div>
   );
 }

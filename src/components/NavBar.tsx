@@ -12,10 +12,14 @@ import styles from "../styles/NavBar.module.scss";
 
 export default function NavBar() {
   const currentPage = usePathname();
-  console.log(currentPage);
   return (
     <Paper
-      sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
+      sx={{
+        position: "fixed",
+        bottom: 0,
+        left: 0,
+        right: 0,
+      }}
       elevation={3}
       className={styles.navbar}
     >
