@@ -13,7 +13,6 @@ export const setUserCookie = (user: any) => {
   Cookies.set("auth", JSON.stringify(user), {
     expires: 1 / 24,
   });
-  console.log(Cookies.get());
 };
 
 export const removeUserCookie = () => Cookies.remove("auth");

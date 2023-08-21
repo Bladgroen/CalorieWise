@@ -1,18 +1,8 @@
 "use client";
-import { useState } from "react";
 import styles from "../../styles/MealCard.module.scss";
 import MealCardFood from "./MealCardFood";
 
 export default function MealCard() {
-  const [shimmering, setShimmering] = useState(false);
-
-  const handleClick = () => {
-    setShimmering(true);
-    setTimeout(() => {
-      setShimmering(false);
-    }, 1500);
-  };
-
   return (
     <div className={styles.mealcardContainer}>
       <div className={styles.mealcard_title}>
@@ -21,12 +11,7 @@ export default function MealCard() {
       </div>
       <MealCardFood />
       <div className={styles.AddFood}>
-        <button
-          className={`shimmer-effect ${shimmering ? "shimmering" : ""}`}
-          onClick={handleClick}
-        >
-          Add food
-        </button>
+        <button>Add food</button>
       </div>
     </div>
   );

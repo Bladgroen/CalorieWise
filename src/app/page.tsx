@@ -12,8 +12,8 @@ export default function Page() {
           <CalorieBubble eatenCalories={eatenCalories} />
         </div>
         {/* padding bottom geven aan onderste element */}
-        {/* <MealCard />
-        <MealCard /> */}
+        <MealCard />
+        <MealCard />
       </Layout>
     </>
   );

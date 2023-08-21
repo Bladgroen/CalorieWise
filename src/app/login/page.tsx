@@ -20,9 +20,7 @@ export default function RegisterPage() {
   const handleSubmit = async (values: RegisterFormData) => {
     setLoading(true);
     const validationErrors = await validateForm(values);
-    function routerpsh() {
-      router.push("/");
-    }
+
     if (Object.keys(validationErrors).length === 0) {
       try {
         await signIn(values);
