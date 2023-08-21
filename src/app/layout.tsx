@@ -1,7 +1,6 @@
 "use client";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
