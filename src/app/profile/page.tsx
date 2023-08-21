@@ -1,6 +1,6 @@
-import Header from "../../components/HeaderBar";
+"use client";
+import { logOut } from "@/firebase/signup";
 import Layout from "../../components/LayoutEdit";
-import NavBar from "../../components/NavBar";
 
 export default function Profile() {
   return (
@@ -8,6 +8,7 @@ export default function Profile() {
       <Layout>
         <div>
           <p>profile page</p>
+          <button onClick={logOut}>Logout</button>
         </div>
       </Layout>
     </>
