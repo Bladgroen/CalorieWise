@@ -12,10 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 initFirebase();
 const auth = firebase.auth();
 
-export const metadata: Metadata = {
-  title: "CalorieWise",
-  description: "CalorieWise tracks all you calories for you!",
-};
+
 
 export default function RootLayout({
   children,
