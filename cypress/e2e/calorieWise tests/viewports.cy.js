@@ -1,0 +1,30 @@
+//import styles from "../../../src/app/page.module.scss";
+
+describe("Viewport Tests", () => {
+  beforeEach(() => {
+    cy.visit("/login");
+
+    cy.get("input[name=email]").type("vincentlaureys21@gmail.com");
+    cy.get("input[name=password").type("Azerty123");
+    cy.get("button[type=submit]").click();
+    cy.url().should("include", "/");
+  });
+
+  it("should display correctly on desktop viewport", () => {
+    cy.viewport(1920, 1080); // Set the viewport to a desktop size
+    cy.get(".CalorieBubble_bubble__4Yb4p").should("be.visible");
+    cy.get(".MealCard_mealcardContainer__S7MBz").should("have.length", 2); // Assuming MealCard has a class "mealCard"
+  });
+
+  it("should display correctly on tablet viewport", () => {
+    cy.viewport("ipad-2"); // Use a preset for a tablet viewport
+    cy.get(".CalorieBubble_bubble__4Yb4p").should("be.visible");
+    cy.get(".MealCard_mealcardContainer__S7MBz").should("have.length", 2);
+  });
+
+  it("should display correctly on mobile viewport", () => {
+    cy.viewport("iphone-6"); // Use a preset for a mobile viewport
+    cy.get(".CalorieBubble_bubble__4Yb4p").should("be.visible");
+    cy.get(".MealCard_mealcardContainer__S7MBz").should("have.length", 2);
+  });
+});

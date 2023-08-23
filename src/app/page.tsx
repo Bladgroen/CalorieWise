@@ -12,8 +12,9 @@ export default function Page() {
           <CalorieBubble eatenCalories={eatenCalories} />
         </div>
         {/* padding bottom geven aan onderste element */}
-        <MealCard />
-        <MealCard />
+        <MealCard title={"Breakfast"} />
+        <MealCard title={"Lunch"} />
+        <MealCard title={"Dinner"} />
       </Layout>
     </>
   );
