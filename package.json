@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@types/firebase": "^3.2.1",
+    "cypress": "^12.17.4",
     "sass": "^1.64.1"
   }
 }
